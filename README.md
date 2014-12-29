@@ -22,5 +22,5 @@ git clone または ZIP ファイルをダウンロードして /app/Plugin デ�
 
 ### 記事本文の記述例と表示結果
 
-* http://example.com/?foo=bar … メディアが埋め込まれます
-* {http://example.com/?foo=bar} … メディアは埋め込まれません（ URL がそのまま表示されます）
+* ````http://example.com/?foo=bar```` … メディアが埋め込まれます
+* ````{http://example.com/?foo=bar}```` … メディアは埋め込まれません（ URL がそのまま表示されます）
