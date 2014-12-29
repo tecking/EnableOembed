@@ -24,7 +24,7 @@ class EnableOembedViewEventListener extends BcViewEventListener {
 	public function beforeLayout(CakeEvent $event) {	
 
 		// インスタンス生成
-		$Essence = Essence\Essence::instance();
+		$essence = Essence\Essence::instance();
 
 		// レイアウト前のサブジェクトの取得
 		$view = $event->subject();
@@ -46,7 +46,7 @@ class EnableOembedViewEventListener extends BcViewEventListener {
 		$content = str_replace($matches['search'], $matches['encrypt'], $content);
 
 		// 記事本文（ content ）内の oEmbed 対象 URL 文字列を置換
-		$content = $Essence->replace($content);
+		$content = $essence->replace($content);
 
 		// 暗号化された URL 文字列を {} なしの URL 文字列に置換
 		$content = str_replace($matches['encrypt'], $matches['url'], $content);
