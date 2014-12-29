@@ -1,7 +1,7 @@
 <?php
 
 /**
- * [Enable oEmbed] Enable oEmbed ビューイベントリスナー
+ * [Enable oEmbed] Enable oEmbed ビューイベントリスナ
  *
  * @copyright  Copyright 2014 - , tecking
  * @link       http://baser-for-wper.tecking.org
