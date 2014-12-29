@@ -7,24 +7,21 @@
  * @link       http://baser-for-wper.tecking.org
  * @package    tecking.bcplugins.enable_oembed
  * @since      baserCMS v 3.0.6
- * @version    0.2
+ * @version    0.3
  * @license    MIT License
  */
 
+// 設定ファイルのロード
+Configure::load('Config', 'bootstrap');
 
 // イベントリスナの登録
 class EnableOembedViewEventListener extends BcViewEventListener {
-
-	// Essence のロード
-	function __construct() {
-		require_once(dirname(__FILE__) . '/../Vendor/essence/lib/bootstrap.php');
-	}
 
 	// イベントの登録
 	public $events = array('beforeLayout');
 
 	// oEmbed の処理
-	public function beforeLayout(CakeEvent $event) {
+	public function beforeLayout(CakeEvent $event) {	
 
 		// インスタンス生成
 		$Essence = Essence\Essence::instance();

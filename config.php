@@ -7,7 +7,7 @@
  * @link       http://baser-for-wper.tecking.org
  * @package    tecking.bcplugins.enable_oembed
  * @since      baserCMS v 3.0.6
- * @version    0.2
+ * @version    0.3
  */
 
 $title = 'oEmbed 有効化';
