@@ -48,10 +48,10 @@ class EnableOembedViewEventListener extends BcViewEventListener {
 		}
 		$content = str_replace($matches['search'], $matches['encrypt'], $content);
 
-		// 記事本文（ content ）内の対象 URL を置換
+		// 記事本文（ content ）内の oEmbed 対象 URL 文字列を置換
 		$content = $Essence->replace($content);
 
-		// {} で囲まれている URL 文字列を復号化して置換
+		// 暗号化された URL 文字列を {} なしの URL 文字列に置換
 		$content = str_replace($matches['encrypt'], $matches['url'], $content);
 
 		// 記事本文（ content ）として設定
