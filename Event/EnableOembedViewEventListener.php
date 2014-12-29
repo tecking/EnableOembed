@@ -38,41 +38,23 @@ class EnableOembedViewEventListener extends BcViewEventListener {
 			return;
 		}
 
+		// 記事本文（ content ）を取得
 		$content = $view->Blocks->get('content');
-		// $content = preg_replace('/({http.+?})/', Security::cipher("$1", Configure::read('Security.cipherSeed')), $content);
-		// $content = preg_replace('/({http.+?})/', "$1", $content);
 
+		// {} で囲まれている URL 文字列を暗号化して置換
 		preg_match_all('/(?P<search>({)(?P<url>https?.+?)(}))/i', $content, $matches);
-
 		foreach ($matches['search'] as $key => $value) {
-			// $value['encrypt'] = Security::cipher($value, Configure::read('Security.cipherSeed'));
 			$matches['encrypt']{$key} = Security::cipher($value, Configure::read('Security.cipherSeed'));
-			// $encrypt[] = Security::cipher($value, Configure::read('Security.cipherSeed'));
 		}
-
-		// var_dump($matches['search']);
-		// var_dump($matches['url']);
-		// var_dump($matches['encrypt']);
-
-		// $patterns = $matches['url'];
-		// $replacements = $matches['encrypt'];
-
 		$content = str_replace($matches['search'], $matches['encrypt'], $content);
 
-		// $content = preg_replace('/({)(https?.+?)(})/i', "$2", $content);
-
-
-// // 
-// 		foreach ($encrypt as $key => $value) {
-// 			$decode[] = Security::cipher($value, Configure::read('Security.cipherSeed'));
-// 		}
-// 		var_dump($decode);
-
 		// 記事本文（ content ）内の対象 URL を置換
-		// $content = $Essence->replace($view->Blocks->get('content'));
 		$content = $Essence->replace($content);
 
+		// {} で囲まれている URL 文字列を復号化して置換
 		$content = str_replace($matches['encrypt'], $matches['url'], $content);
+
+		// 記事本文（ content ）として設定
 		$view->Blocks->set('content', $content);
 
 		return;
