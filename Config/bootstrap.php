@@ -10,4 +10,5 @@
  * @version    0.3
  */
 
+// Essence の bootstrap ファイルをインポート
 App::import('Vendor', 'EnableOembed.Essence.Bootstrap', array('file' => 'essence' . DS .'lib' . DS .'bootstrap.php'));
