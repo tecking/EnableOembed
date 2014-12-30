@@ -24,3 +24,13 @@ git clone または ZIP ファイルをダウンロードして /app/Plugin デ�
 
 * ````http://example.com/?foo=bar```` … メディアが埋め込まれます
 * ````{http://example.com/?foo=bar}```` … メディアは埋め込まれません（ URL がそのまま表示されます）
+
+## 更新履歴
+
+* 0.3（ 2014-12-30 ）
+ * 初期設定の記述を Config/bootstrap.php に分離  
+ （ thanks to [@n_1215 さん](https://twitter.com/n_1215/status/549548359648677889) ）
+* 0.2（ 2014-12-29 ）
+ * メディアの埋め込みを避けるための処理を追加
+* 0.1（ 2014-12-29 ）
+ * 公開
