@@ -27,16 +27,16 @@ class EnableOembedViewEventListener extends BcViewEventListener {
 		$Essence = Essence\Essence::instance();
 
 		// レイアウト前のサブジェクトの取得
-		$view = $event->subject();
+		$View = $event->subject();
 
 		// 管理画面のビューなら何もしない
-		$request = $view->request;
+		$request = $View->request;
 		if (preg_match('/^admin_/', $request->action)) {
 			return;
 		}
 
 		// 記事本文（ content ）を取得
-		$content = $view->Blocks->get('content');
+		$content = $View->Blocks->get('content');
 
 		// {} で囲まれている URL 文字列を暗号化して置換
 		preg_match_all('/(?P<search>({)(?P<url>https?.+?)(}))/i', $content, $matches);
@@ -52,7 +52,7 @@ class EnableOembedViewEventListener extends BcViewEventListener {
 		$content = str_replace($matches['encrypt'], $matches['url'], $content);
 
 		// 記事本文（ content ）として設定
-		$view->Blocks->set('content', $content);
+		$View->Blocks->set('content', $content);
 
 		return;
 	}
