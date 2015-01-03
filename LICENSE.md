@@ -5,7 +5,7 @@ Copyright 2014 - tecking <http://baser-for-wper.tecking.org/>
 
 Licensed under [The MIT License](http://opensource.org/licenses/mit-license)
 
-# External Library
+# External library
 
 * essence  - <https://github.com/felixgirault/essence>  
   Copyright (c) 2012, Félix Girault  
