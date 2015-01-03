@@ -3,7 +3,7 @@
 EnableOembed : [baserCMS](http://basercms.net) Plugin  
 Copyright 2014 - tecking <http://baser-for-wper.tecking.org/>
 
-Licensed under [the MIT License](http://opensource.org/licenses/mit-license)
+Licensed under [The MIT License](http://opensource.org/licenses/mit-license)
 
 # External Library
 
