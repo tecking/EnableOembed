@@ -43,13 +43,17 @@ class EnableOembedViewEventListener extends BcViewEventListener {
 		foreach ($matches['search'] as $key => $value) {
 			$matches['encrypt']{$key} = Security::cipher($value, Configure::read('Security.cipherSeed'));
 		}
-		$content = str_replace($matches['search'], $matches['encrypt'], $content);
+		if (!empty($matches['encrypt'])) {
+			$content = str_replace($matches['search'], $matches['encrypt'], $content);
+		}
 
 		// 記事本文（ content ）内の oEmbed 対象 URL 文字列を置換
 		$content = $Essence->replace($content);
 
 		// 暗号化された URL 文字列を {} なしの URL 文字列に置換
-		$content = str_replace($matches['encrypt'], $matches['url'], $content);
+		if (!empty($matches['encrypt'])) {
+			$content = str_replace($matches['encrypt'], $matches['url'], $content);
+		}
 
 		// 記事本文（ content ）として設定
 		$View->Blocks->set('content', $content);
