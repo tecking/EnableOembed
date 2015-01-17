@@ -7,6 +7,6 @@ Licensed under [The MIT License](http://opensource.org/licenses/mit-license)
 
 # External library
 
-* essence  - <https://github.com/felixgirault/essence>  
+* [Essence](https://github.com/felixgirault/essence)  
   Copyright (c) 2012, Félix Girault  
   Licensed under [The BSD 2-Clause License](http://opensource.org/licenses/BSD-2-Clause)
