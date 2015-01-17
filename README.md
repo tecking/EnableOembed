@@ -27,6 +27,8 @@ git clone または ZIP ファイルをダウンロードして /app/Plugin デ�
 
 ## 更新履歴
 
+* 0.3.1 ( 2015-01-18 )
+ * 記事内に {} で囲まれた URL がないとき Undefined index の警告を回避する処理を追加
 * 0.3（ 2014-12-30 ）
  * 初期設定の記述を Config/bootstrap.php に分離  
  （ thanks to [@n_1215 さん](https://twitter.com/n_1215/status/549548359648677889) ）
