@@ -4,43 +4,22 @@
  *	@author Félix Girault <felix.girault@gmail.com>
  *	@license FreeBSD License (http://opensource.org/licenses/BSD-2-Clause)
  */
-
 namespace Essence\Provider;
 
-use PHPUnit_Framework_TestCase;
-use Essence\Provider;
-use Essence\Provider\OEmbed;
+use PHPUnit_Framework_TestCase as TestCase;
 use Essence\Di\Container;
-use Essence\Log\Logger\Null as NullLogger;
-
-
-
-/**
- *
- */
-
-class ProviderImplementation extends Provider {
-
-	/**
-	 *
-	 */
-
-	protected function _embed( $url, array $options ) { }
-
-}
+use StdClass;
 
 
 
 /**
  *	Test case for Collection.
  */
-
-class CollectionTest extends PHPUnit_Framework_TestCase {
+class CollectionTest extends TestCase {
 
 	/**
 	 *
 	 */
-
 	public $Provider = null;
 
 
@@ -48,7 +27,6 @@ class CollectionTest extends PHPUnit_Framework_TestCase {
 	/**
 	 *
 	 */
-
 	public $Collection = null;
 
 
@@ -56,27 +34,19 @@ class CollectionTest extends PHPUnit_Framework_TestCase {
 	/**
 	 *
 	 */
+	public function setUp() {
+		$this->Provider = new StdClass();
 
-	public function setUp( ) {
-
-		$this->Provider = new ProviderImplementation( new NullLogger( ));
-
-		$Container = new Container( );
-		$Container->set( 'OEmbed', $this->Provider );
-
-		$this->Collection = new Collection( $Container );
-		$this->Collection->setProperties([
-			'Foo' => [
-				'class' => 'OEmbed',
-				'filter' => '#^foo$#'
-			],
-			'Bar' => [
-				'class' => 'OpenGraph',
-				'filter' => function ( $url ) {
-					return ( $url === 'bar' );
-				}
-			]
+		$Container = new Container();
+		$Container->set('Foo', $this->Provider);
+		$Container->set('filters', [
+			'Foo' => '~^foo$~',
+			'Bar' => function ($url) {
+				return ($url === 'bar');
+			}
 		]);
+
+		$this->Collection = new Collection($Container);
 	}
 
 
@@ -84,12 +54,10 @@ class CollectionTest extends PHPUnit_Framework_TestCase {
 	/**
 	 *
 	 */
-
-	public function testHasProvider( ) {
-
-		$this->assertTrue( $this->Collection->hasProvider( 'foo' ));
-		$this->assertTrue( $this->Collection->hasProvider( 'bar' ));
-		$this->assertFalse( $this->Collection->hasProvider( 'baz' ));
+	public function testHasProvider() {
+		$this->assertTrue($this->Collection->hasProvider('foo'));
+		$this->assertTrue($this->Collection->hasProvider('bar'));
+		$this->assertFalse($this->Collection->hasProvider('baz'));
 	}
 
 
@@ -97,12 +65,13 @@ class CollectionTest extends PHPUnit_Framework_TestCase {
 	/**
 	 *
 	 */
+	public function testProviders() {
+		$providers = [];
 
-	public function testProviders( ) {
+		foreach ($this->Collection->providers('foo') as $Provider) {
+			$providers[] = $Provider;
+		}
 
-		$this->assertEquals(
-			[ $this->Provider ],
-			$this->Collection->providers( 'foo' )
-		);
+		$this->assertEquals([$this->Provider], $providers);
 	}
 }
