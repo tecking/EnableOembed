@@ -1,0 +1,8 @@
+{
+	"config": {                                                                                 
+		"vendor-dir": "Vendor"
+	},
+	"require": {
+		"essence/essence": "^2.6"
+	}
+}

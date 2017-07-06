@@ -10,5 +10,6 @@
  * @version    0.3.1
  */
 
-// Essence の bootstrap ファイルをインポート
-App::import('Vendor', 'EnableOembed.Essence.Bootstrap', array('file' => 'essence' . DS . 'lib' . DS . 'bootstrap.php'));
+// Composer の autoload ファイルをインクルード
+App::import('Vendor', 'EnableOembed.Autoload', array('file' => 'autoload.php'));
+//App::import('Vendor', 'autoload');
