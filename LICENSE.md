@@ -1,12 +1,12 @@
 # License
 
-EnableOembed : [baserCMS](http://basercms.net) Plugin  
-Copyright 2014 - tecking <http://baser-for-wper.tecking.org/>
+EnableOembed : [baserCMS](https://basercms.net) Plugin  
+Copyright 2014 - tecking <https://baser-for-wper.tecking.org/>
 
-Licensed under [The MIT License](http://opensource.org/licenses/mit-license)
+Licensed under [The MIT License](https://opensource.org/licenses/MIT)
 
 # External library
 
-* [Essence](https://github.com/felixgirault/essence)  
-  Copyright (c) 2012, Félix Girault  
-  Licensed under [The BSD 2-Clause License](http://opensource.org/licenses/BSD-2-Clause)
+* [Embera](https://github.com/mpratt/Embera)  
+  Copyright (C) 2016 by Michael Pratt
+  Licensed under [MIT License](https://opensource.org/licenses/MIT)
