@@ -12,4 +12,3 @@
 
 // Composer の autoload ファイルをインクルード
 App::import('Vendor', 'EnableOembed.Autoload', array('file' => 'autoload.php'));
-//App::import('Vendor', 'autoload');

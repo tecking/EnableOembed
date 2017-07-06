@@ -1,53 +1,55 @@
 [
     {
-        "name": "essence/essence",
-        "version": "2.6.1",
-        "version_normalized": "2.6.1.0",
+        "name": "mpratt/embera",
+        "version": "1.9.3",
+        "version_normalized": "1.9.3.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/essence/essence.git",
-            "reference": "ed08afc5c2936c4d03f8c58dc54d5aff752cb9fd"
+            "url": "https://github.com/mpratt/Embera.git",
+            "reference": "45c380c40f6d08687c193c685a7ebd3f3db27811"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/essence/essence/zipball/ed08afc5c2936c4d03f8c58dc54d5aff752cb9fd",
-            "reference": "ed08afc5c2936c4d03f8c58dc54d5aff752cb9fd",
+            "url": "https://api.github.com/repos/mpratt/Embera/zipball/45c380c40f6d08687c193c685a7ebd3f3db27811",
+            "reference": "45c380c40f6d08687c193c685a7ebd3f3db27811",
             "shasum": ""
         },
         "require": {
-            "ext-curl": "*",
-            "php": ">=5.4.0"
+            "php": ">=5.3"
         },
-        "suggest": {
-            "felixgirault/essence-interfaces": "Allows better integration with different frameworks."
-        },
-        "time": "2016-08-17T15:19:50+00:00",
+        "time": "2016-07-15T15:57:44+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
-            "files": [
-                "lib/bootstrap.php"
-            ]
+            "psr-0": {
+                "Embera": "Lib/"
+            }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD-2-Clause"
+            "MIT"
         ],
         "authors": [
             {
-                "name": "Félix Girault",
-                "email": "felix.girault@gmail.com",
-                "homepage": "http://www.felix-girault.fr",
-                "role": "Developer"
+                "name": "Michael Pratt",
+                "email": "pratt@hablarmierda.net",
+                "homepage": "http://www.michael-pratt.com",
+                "role": "Author/Developer"
             }
         ],
-        "description": "Extracts informations about medias on the web, like youtube videos, twitter statuses or blog articles.",
-        "homepage": "http://github.com/felixgirault/essence",
+        "description": "Oembed consumer library, that gives information about urls. It helps you replace urls to 60+ sites like youtube or vimeo, with their html embed code.",
+        "homepage": "https://github.com/mpratt/Embera",
         "keywords": [
+            "Auto embed",
+            "Embed Text",
+            "Url Embed",
             "embed",
-            "media",
+            "instagram",
             "oembed",
-            "opengraph"
+            "twitter",
+            "vimeo",
+            "vine",
+            "youtube"
         ]
     }
 ]
