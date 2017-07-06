@@ -24,8 +24,8 @@ class EnableOembedViewEventListener extends BcViewEventListener {
 	public function beforeLayout(CakeEvent $event) {	
 
 		// インスタンス生成
-		$Essence = Essence\Essence::instance();
-
+		$Embera = new Embera\Embera();
+		
 		// レイアウト前のサブジェクトの取得
 		$Subject = $event->subject();
 
@@ -39,6 +39,7 @@ class EnableOembedViewEventListener extends BcViewEventListener {
 		$content = $Subject->Blocks->get('content');
 
 		// {} で囲まれている URL 文字列を暗号化して置換
+		$matches = '';
 		preg_match_all('/(?P<search>({)(?P<url>https?.+?)(}))/i', $content, $matches);
 		foreach ($matches['search'] as $key => $value) {
 			$matches['encrypt']{$key} = Security::cipher($value, Configure::read('Security.cipherSeed'));
@@ -48,8 +49,8 @@ class EnableOembedViewEventListener extends BcViewEventListener {
 		}
 
 		// 記事本文（ content ）内の oEmbed 対象 URL 文字列を置換
-		$content = $Essence->replace($content);
-
+		$content = $Embera->autoEmbed($content);
+		
 		// 暗号化された URL 文字列を {} なしの URL 文字列に置換
 		if (!empty($matches['encrypt'])) {
 			$content = str_replace($matches['encrypt'], $matches['url'], $content);
