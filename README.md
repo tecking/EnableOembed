@@ -22,11 +22,13 @@ git clone または ZIP ファイルをダウンロードして /app/Plugin デ�
 
 ### 記事本文の記述例と表示結果
 
-* ````http://example.com/?foo=bar```` … メディアが埋め込まれます
-* ````{http://example.com/?foo=bar}```` … メディアは埋め込まれません（ URL がそのまま表示されます）
+* ````https://example.com/?foo=bar```` … メディアが埋め込まれます
+* ````{https://example.com/?foo=bar}```` … メディアは埋め込まれません（ URL がそのまま表示されます）
 
 ## 更新履歴
 
+* 0.4.1 ( 2018-05-24 )
+	* baserCMS 4 系での動作確認
 * 0.4 ( 2017-07-06 )
 	* 同梱ライブラリを Embera に変更  
 	（ cURL サポートまたは allow_url_fopen = on が必須）
