@@ -1,19 +1,16 @@
+dist: xenial
+os: linux
 language: php
 
 php:
-  - hhvm
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
+  - 7.2
+  - 7.3
+  - 7.4
 
-matrix:
-  allow_failures:
-    - 7.0
+cache:
+  directories:
+    - $HOME/.composer/cache/files
 
-script: phpunit --coverage-clover=coverage.clover
+before_script: composer install
 
-after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+script: composer test

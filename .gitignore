@@ -2,3 +2,4 @@
 *.sublime-project
 .svn/
 composer.lock
+.vscode/

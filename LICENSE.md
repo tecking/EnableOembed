@@ -8,5 +8,5 @@ Licensed under [The MIT License](https://opensource.org/licenses/MIT)
 # External library
 
 * [Embera](https://github.com/mpratt/Embera)  
-  Copyright (C) 2016 by Michael Pratt
+  Copyright (C) 2013-2020 by Michael Pratt
   Licensed under [MIT License](https://opensource.org/licenses/MIT)

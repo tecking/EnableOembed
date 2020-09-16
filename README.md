@@ -14,7 +14,7 @@ git clone または ZIP ファイルをダウンロードして /app/Plugin デ�
 
 埋め込みたいメディア（動画, ツイート, スライドなど）の URL を記事本文に記述してください。自動的に埋め込みコードに置換され、ウェブページ上に表示されます。
 
-自動的に置換されるウェブサービス（ oEmbed プロバイダ）一覧は [Embera の Supported Sites の項](https://github.com/mpratt/Embera#supported-sites)にあります。
+自動的に置換されるウェブサービス（ oEmbed プロバイダ）一覧は [Embera の Supported Sites の項](https://github.com/mpratt/Embera/blob/master/doc/02-providers.md)にあります。
 
 ### メディアの埋め込みを避けたいとき
 
@@ -27,6 +27,8 @@ git clone または ZIP ファイルをダウンロードして /app/Plugin デ�
 
 ## 更新履歴
 
+* 1.0.0 ( 2020-09-16 )
+	* 同梱の Embera を 2.x 系にアップデート
 * 0.4.1 ( 2018-05-24 )
 	* baserCMS 4 系での動作確認
 * 0.4 ( 2017-07-06 )

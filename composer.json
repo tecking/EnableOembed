@@ -3,6 +3,6 @@
 		"vendor-dir": "Vendor"
 	},
 	"require": {
-		"mpratt/embera": "^1.9"
+		"mpratt/embera": "~2.0"
 	}
 }

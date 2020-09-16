@@ -1,28 +1,35 @@
 [
     {
         "name": "mpratt/embera",
-        "version": "1.9.3",
-        "version_normalized": "1.9.3.0",
+        "version": "2.0.13",
+        "version_normalized": "2.0.13.0",
         "source": {
             "type": "git",
             "url": "https://github.com/mpratt/Embera.git",
-            "reference": "45c380c40f6d08687c193c685a7ebd3f3db27811"
+            "reference": "7081e4d3b13ed82b25fd125fb38af796a34bf234"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/mpratt/Embera/zipball/45c380c40f6d08687c193c685a7ebd3f3db27811",
-            "reference": "45c380c40f6d08687c193c685a7ebd3f3db27811",
+            "url": "https://api.github.com/repos/mpratt/Embera/zipball/7081e4d3b13ed82b25fd125fb38af796a34bf234",
+            "reference": "7081e4d3b13ed82b25fd125fb38af796a34bf234",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3"
+            "ext-json": "*",
+            "php": ">=5.6"
         },
-        "time": "2016-07-15T15:57:44+00:00",
+        "require-dev": {
+            "phpunit/phpunit": "^8.3"
+        },
+        "suggest": {
+            "ext-curl": "Allow to fetch data using curl instead of using file_get_contents"
+        },
+        "time": "2020-08-26T17:29:36+00:00",
         "type": "library",
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
-            "psr-0": {
-                "Embera": "Lib/"
+            "psr-4": {
+                "Embera\\": "src/Embera"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -32,16 +39,17 @@
         "authors": [
             {
                 "name": "Michael Pratt",
-                "email": "pratt@hablarmierda.net",
+                "email": "yo@michael-pratt.com",
                 "homepage": "http://www.michael-pratt.com",
                 "role": "Author/Developer"
             }
         ],
-        "description": "Oembed consumer library, that gives information about urls. It helps you replace urls to 60+ sites like youtube or vimeo, with their html embed code.",
+        "description": "Oembed consumer library. Converts urls into their html embed code. Supports 150+ sites, such as Youtube, Twitter, vimeo, Instagram etc.",
         "homepage": "https://github.com/mpratt/Embera",
         "keywords": [
             "Auto embed",
             "Embed Text",
+            "Responsive Embeds",
             "Url Embed",
             "embed",
             "instagram",

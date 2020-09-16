@@ -7,7 +7,7 @@
  * @link       https://baser-for-wper.tecking.org
  * @package    tecking.bcplugins.enable_oembed
  * @since      baserCMS v 3.0.6
- * @version    0.4.1
+ * @version    1.0.0
  * @license    MIT License
  */
 
